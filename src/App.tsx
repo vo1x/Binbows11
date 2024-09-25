@@ -1,14 +1,17 @@
-import Login from "./screens/Login";
+import Desktop from './screens/Desktop';
+import Login from './screens/Login';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-
-function App() {
+const App: React.FC = () => {
   return (
-    <>
-      <div>
-        <Login />
-      </div>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />}></Route>
+        <Route path="/desktop" element={<Desktop />}></Route>
+        {/* <Route element={<Login />} path="/login"></Route> */}
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
