@@ -1,4 +1,3 @@
-import React from 'react';
 import TaskbarIcon from './TaskbarIcon';
 
 const Taskbar: React.FC = () => {
