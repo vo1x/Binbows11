@@ -1,10 +1,12 @@
-import { KeyboardEvent, useEffect, useState } from 'react';
+import { KeyboardEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useUserStore from '../store/userStore';
 
-import Avatar from '../components/login/avatar';
+import Avatar from '../components/login/Avatar';
+import Tooltip from '../components/login/Tooltip';
+import Wallpaper from '../components/ui/Wallpaper';
 
-const LOCK_SCREEN_BG_URL = '/lockscreen_wallpaper.webp';
+const LOCK_SCREEN_BG_URL = 'images/lockscreen_wallpaper.webp';
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
@@ -24,12 +26,7 @@ const Login: React.FC = () => {
 
   return (
     <div className="relative flex h-screen w-screen justify-center items-center">
-      <img
-        src={LOCK_SCREEN_BG_URL}
-        alt="lockscreen_bg"
-        loading="lazy"
-        className="absolute inset-0 -z-10 h-full w-full object-cover object-center blur-lg bg-white/50"
-      />
+      <Wallpaper url={LOCK_SCREEN_BG_URL} type="lockscreen" />
       <div className="flex flex-col items-center space-y-6">
         <div className="flex flex-col items-center space-y-1">
           <Avatar username={usernameInput} />
@@ -58,7 +55,9 @@ const Login: React.FC = () => {
             }
           }}
         />
-        <span className="text-neutral-200">I forgot my pin</span>
+        <Tooltip tip="Enter a random username and password to login!">
+          <span className="text-neutral-200 hover:text-white ">I forgot my pin</span>
+        </Tooltip>
       </div>
     </div>
   );

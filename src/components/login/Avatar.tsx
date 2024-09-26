@@ -1,4 +1,4 @@
-const AVATAR_URL = '/avatar.gif';
+const AVATAR_URL = 'images/avatar.gif';
 
 interface IAvatar {
   username: string;
