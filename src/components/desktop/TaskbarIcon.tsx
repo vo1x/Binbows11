@@ -1,5 +1,5 @@
 interface ITaskbarIconProps {
-  name: 'start' | 'explorer' | 'edge' | 'store' | 'taskview' | 'terminal';
+  name: 'start' | 'explorer' | 'edge' | 'store' | 'taskview' | 'terminal' | 'search';
   size?: number;
 }
 

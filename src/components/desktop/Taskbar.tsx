@@ -6,6 +6,7 @@ const Taskbar: React.FC = () => {
     <div className="absolute bottom-0 backdrop-blur-[128px] border-t border-t-neutral-700 bg-neutral-800 bg-opacity-50 h-max p-1 w-full overflow-hidden flex items-center justify-center text-white">
       <div className="flex items-center space-x-3">
         <TaskbarIcon name="start" />
+        <TaskbarIcon name="search" />
         <TaskbarIcon name="taskview" />
         <TaskbarIcon name="explorer" />
         <TaskbarIcon name="store" />
