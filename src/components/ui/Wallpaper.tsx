@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface IWallpaperProps {
   url: string;
   type: 'desktop' | 'lockscreen';
@@ -5,13 +7,11 @@ interface IWallpaperProps {
 
 const Wallpaper: React.FC<IWallpaperProps> = ({ url, type }) => {
   return (
-    <img
-      src={url}
-      alt="desktop background"
-      loading="lazy"
-      className={`absolute inset-0 -z-10 h-full w-full object-cover object-center ${type == 'lockscreen' && 'blur-lg bg-white/50'}`}
-      style={{ userSelect: 'none', WebkitUserSelect: 'none', pointerEvents: 'none' }}
-      draggable="false"
+    <div
+      className={`absolute inset-0 -z-10 h-full w-full bg-cover bg-center bg-no-repeat select-none pointer-events-none ${
+        type === 'lockscreen' ? 'blur-lg bg-white/50' : ''
+      }`}
+      style={{ backgroundImage: `url(${url})` }}
     />
   );
 };

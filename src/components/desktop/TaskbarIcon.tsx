@@ -1,13 +1,16 @@
-type TaskbarIconProps = {
-  name: 'start' | 'explorer';
+interface ITaskbarIconProps {
+  name: 'start' | 'explorer' | 'edge' | 'store' | 'taskview' | 'terminal';
   size?: number;
-};
+}
 
-const TaskbarIcon: React.FC<TaskbarIconProps> = ({ name, size = 32 }) => {
+const TaskbarIcon: React.FC<ITaskbarIconProps> = ({ name, size = 32 }) => {
   const ICON = `/icons/${name}.ico`;
   return (
-    <div className={`p-2 rounded-lg hover:bg-neutral-200/15`}>
-      <img src={ICON} alt="Start" className={``} width={`${size}`} />
+    <div
+      draggable="false"
+      className={`flex items-center justify-center p-2 rounded-lg hover:bg-neutral-200/15 bg-transparent select-none`}
+    >
+      <img src={ICON} alt={name} className={`p-0 pointer-events-none`} width={size} height={size} />
     </div>
   );
 };
